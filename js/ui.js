@@ -1,7 +1,7 @@
-const agencies = document.querySelector('.agencies');
-const eventsMonday = document.querySelector('.eventsMonday');
-const eventsTuesday = document.querySelector('.eventsTuesday');
-const eventsWednesday = document.querySelector('.eventsWednesday');
+const agencies = document.querySelector('.agencies'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
+const eventsMonday = document.querySelector('.eventsMonday'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
+const eventsTuesday = document.querySelector('.eventsTuesday'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
+const eventsWednesday = document.querySelector('.eventsWednesday'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
 document.addEventListener('DOMContentLoaded', function() {
   // nav menu
   const menus = document.querySelectorAll('.side-menu');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   M.Sidenav.init(forms, {edge: 'left'});
 });
 
-// render agency data
+//CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render agency data
 const renderAgency = (data, id) => {
 
   const html = `
@@ -29,12 +29,12 @@ const renderAgency = (data, id) => {
   </div>
   </li>
   `;
-  agencies.innerHTML += html;
+  agencies.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
 
 };
 
-// render event data monday
-const renderMonday = (data, id) => {
+//CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render agency data- render event data monday
+const renderMonday = (data, id) => { 
 
   const html = `
   <li>
@@ -50,11 +50,11 @@ const renderMonday = (data, id) => {
   </div>
   </li>
   `;
-  eventsMonday.innerHTML += html;
+  eventsMonday.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
 
 };
 
-// render event data tuesday
+//CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render agency data - render event data tuesday
 const renderTuesday = (data, id) => {
 
   const html = `
@@ -71,11 +71,11 @@ const renderTuesday = (data, id) => {
   </div>
   </li>
   `;
-  eventsTuesday.innerHTML += html;
+  eventsTuesday.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
 
 };
 
-// render event data wednesday
+//CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render agency data - render event data wednesday
 const renderWednesday = (data, id) => {
 
   const html = `
@@ -92,6 +92,6 @@ const renderWednesday = (data, id) => {
   </div>
   </li>
   `;
-  eventsWednesday.innerHTML += html;
+  eventsWednesday.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
 
 };

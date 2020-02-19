@@ -1,6 +1,6 @@
-const staticCacheName = 'site-static-v10.5';
-const dynamicCacheName = 'site-dynamic-v10.5';
-const assets = [
+const staticCacheName = 'site-static-v10.5'; //CHANGE THIS - name of your static cache
+const dynamicCacheName = 'site-dynamic-v10.5'; //CHANGE THIS - name of your dynamic cache
+const assets = [ //CHANGE THIS - list of assets to automatically get added to the static cache
   '',
   '/index.html',
   '/js/app.js',
@@ -39,7 +39,7 @@ self.addEventListener('install', evt => {
   );
 });
 
-// activate event
+// activate event that deletes old cache versions as well
 self.addEventListener('activate', evt => {
   //console.log('service worker activated');
   evt.waitUntil(
@@ -68,7 +68,7 @@ self.addEventListener('fetch', evt => {
         });
       }).catch(() => {
         if(evt.request.url.indexOf('.html') > -1){
-          return caches.match('/pages/fallback.html');
+          return caches.match('/pages/fallback.html'); // CHANGE THIS - fallback page for if user navigates to a page that they dont have cached offline
         }
       })
     );

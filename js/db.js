@@ -10,7 +10,7 @@ db.enablePersistence()
     }
   });
 
-  // real-time listener agencies
+  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener agencies
   db.collection('agencies').orderBy('agencyName').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
       if(change.type === 'added'){
@@ -22,7 +22,7 @@ db.enablePersistence()
     });
   });
 
-  // real-time listener monday
+  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener monday
   db.collection('eventsMonday').orderBy('eventsOrder').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
       if(change.type === 'added'){
@@ -34,7 +34,7 @@ db.enablePersistence()
     });
   });
 
-  // real-time listener tuesday
+  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener tuesday
   db.collection('eventsTuesday').orderBy('eventsOrder').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
       if(change.type === 'added'){
@@ -46,7 +46,7 @@ db.enablePersistence()
     });
   });
 
-  // real-time listener wednesday
+  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener wednesday
   db.collection('eventsWednesday').orderBy('eventsOrder').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
       if(change.type === 'added'){

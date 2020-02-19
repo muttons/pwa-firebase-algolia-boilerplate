@@ -1,17 +1,15 @@
-/* global algoliasearch instantsearch */
+// global algoliasearch instantsearch
 
 
 
 
-
-/* MY API KEYS  */
 const searchClient = algoliasearch(
-  '986UJU3X2J',
-  '207649c6d35744a9643cfea75b80c60e'
+  '986UJU3X2J', //YOUR ALGOLIA APP ID
+  '207649c6d35744a9643cfea75b80c60e' //YOUR ALGOLIA PUBLIC SEARCH API KEY
 );
 
 const search = instantsearch({
-  indexName: 'agencies',
+  indexName: 'agencies', //CHANGE TO YOUR ALGOLIA INDEX NAME
   searchClient,
 });
 
@@ -22,9 +20,9 @@ search.addWidgets([
   }),
   instantsearch.widgets.hits({
     container: '#hits',
-    templates: {
+    templates: { //EDIT AS NEEDED WITH PROPER VARIABLE NAMES AND HTML FORMATTING
       item: `
-<article>
+<article> 
 
   <h5>{{agencyName}}</h5>
   <h6>{{userName}}</h6>
