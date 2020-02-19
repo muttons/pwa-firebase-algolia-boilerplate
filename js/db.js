@@ -10,11 +10,11 @@ db.enablePersistence()
     }
   });
 
-  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener agencies
-  db.collection('agencies').orderBy('agencyName').onSnapshot(snapshot => {
+  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener
+  db.collection('EXAMPLES').orderBy('EXAMPLEName').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
       if(change.type === 'added'){
-        renderAgency(change.doc.data(), change.doc.id);
+        renderExample(change.doc.data(), change.doc.id);
       }
       if(change.type === 'removed'){
         // remove the document data from the web page
@@ -22,38 +22,4 @@ db.enablePersistence()
     });
   });
 
-  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener monday
-  db.collection('eventsMonday').orderBy('eventsOrder').onSnapshot(snapshot => {
-    snapshot.docChanges().forEach(change => {
-      if(change.type === 'added'){
-        renderMonday(change.doc.data(), change.doc.id);
-      }
-      if(change.type === 'removed'){
-        // remove the document data from the web page
-      }
-    });
-  });
 
-  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener tuesday
-  db.collection('eventsTuesday').orderBy('eventsOrder').onSnapshot(snapshot => {
-    snapshot.docChanges().forEach(change => {
-      if(change.type === 'added'){
-        renderTuesday(change.doc.data(), change.doc.id);
-      }
-      if(change.type === 'removed'){
-        // remove the document data from the web page
-      }
-    });
-  });
-
-  //CHANGE THIS TO YOUR OEN CONSTANTS - real-time listener wednesday
-  db.collection('eventsWednesday').orderBy('eventsOrder').onSnapshot(snapshot => {
-    snapshot.docChanges().forEach(change => {
-      if(change.type === 'added'){
-        renderWednesday(change.doc.data(), change.doc.id);
-      }
-      if(change.type === 'removed'){
-        // remove the document data from the web page
-      }
-    });
-  });

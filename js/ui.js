@@ -1,7 +1,6 @@
-const agencies = document.querySelector('.agencies'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
-const eventsMonday = document.querySelector('.eventsMonday'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
-const eventsTuesday = document.querySelector('.eventsTuesday'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
-const eventsWednesday = document.querySelector('.eventsWednesday'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
+const agencies = document.querySelector('.EXAMPLES'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
+const eventsMonday = document.querySelector('.examplesTwo'); //CHANGE THIS TO YOUR FIREBASE COLLECTION
+
 document.addEventListener('DOMContentLoaded', function() {
   // nav menu
   const menus = document.querySelectorAll('.side-menu');
@@ -11,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
   M.Sidenav.init(forms, {edge: 'left'});
 });
 
-//CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render agency data
-const renderAgency = (data, id) => {
+//CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render data
+const renderEXAMPLE = (data, id) => {
 
   const html = `
   <li>
@@ -29,12 +28,12 @@ const renderAgency = (data, id) => {
   </div>
   </li>
   `;
-  agencies.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
+  EXAMPLES.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
 
 };
 
 //CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render agency data- render event data monday
-const renderMonday = (data, id) => { 
+const renderExampleTwo = (data, id) => { 
 
   const html = `
   <li>
@@ -50,48 +49,8 @@ const renderMonday = (data, id) => {
   </div>
   </li>
   `;
-  eventsMonday.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
+  examplesTwo.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
 
 };
 
-//CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render agency data - render event data tuesday
-const renderTuesday = (data, id) => {
 
-  const html = `
-  <li>
-  <div class="collapsible-header hide" data-id="${id}">${data.eventsOrder}</div>
-  <div class="collapsible-header" data-id="${id}"><i class="material-icons iconadd">add</i><i class="material-icons iconremove">remove</i>${data.eventsTime}</div>
-  <div class="collapsible-body">
-    <ul class="collection">
-      <li class="collection-item eventtitle">${data.eventsTitle}</li>
-      <li class="collection-item location">${data.eventsLocation}</li>
-      <li class="collection-item info">${data.eventsInfo}</li>
-
-    </ul>
-  </div>
-  </li>
-  `;
-  eventsTuesday.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
-
-};
-
-//CHANGE THIS TO YOUR OWN CONSTANT AND HTML STYLING - render agency data - render event data wednesday
-const renderWednesday = (data, id) => {
-
-  const html = `
-  <li>
-  <div class="collapsible-header hide" data-id="${id}">${data.eventsOrder}</div>
-  <div class="collapsible-header" data-id="${id}"><i class="material-icons iconadd">add</i><i class="material-icons iconremove">remove</i>${data.eventsTime}</div>
-  <div class="collapsible-body">
-    <ul class="collection">
-      <li class="collection-item eventtitle">${data.eventsTitle}</li>
-      <li class="collection-item location">${data.eventsLocation}</li>
-      <li class="collection-item info">${data.eventsInfo}</li>
-
-    </ul>
-  </div>
-  </li>
-  `;
-  eventsWednesday.innerHTML += html; //CHANGE THIS TO THE HTML CLASS WHERE YOU WANT IT TO SHOW UP
-
-};
